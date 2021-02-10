@@ -19,29 +19,41 @@
         <body>
             <h1><h:outputText value="Hello World!"/></h1>
             <form action="<%=request.getContextPath()%>/form" method="post">
-                <div class="form__blck">
-              <span class="form__input">Please, select your country(-s):</span>
+                <fieldset title="necessarily">
+                    <p>
+                        <label>Name</label>
+                        <input name="name" type="text" required>
+                    </p>
 
-                    <div class="input__outer">
-                      <div class="form__wrapper">
-                        <input class="form__input" type="checkbox" name="countries" value="England" id="england">
-                        <label class="form__label form__label--check" for="england">England</label>
-                      </div>
-                      <div class="form__wrapper">
-                        <input class="form__input" type="checkbox" name="countries" value="French" id="french">
-                        <label class="form__label form__label--check" for="french">French</label>
-                      </div>
-                      <div class="form__wrapper">
-                        <input class="form__input" type="checkbox" name="countries" value="Deutch" id="deutch">
-                        <label class="form__label form__label--check" for="deutch">Deutch</label>
-                      </div>
-                      <div class="form__wrapper">
-                        <input class="form__input" type="checkbox" name="countries" value="Ukraine" id="ukraine">
-                        <label class="form__label form__label--check" for="ukraine">Ukraine</label>
-                      </div>                            
-                    </div>
-                  </div>
-                <button type="submit">LOx 20</button>
+                    <p>
+                        <label>Телефон</label>
+                        <input name="phone" type="tel" pattern="+380\d\d\d\d\d\d\d\d\d" placeholder="+380123456789" minlength="13" maxlength="13" required>
+                    </p>
+
+                    <p>
+                        <label>Почта</label>
+                        <input name="email" type="email" required>
+                    </p>
+                </fieldset>
+
+                <fieldset title="optional">
+                    <p>
+                        <label>Дата рождения</label>
+                        <input name="date" type="date">
+                    </p>
+
+                </fieldset>
+            </div>
+
+            <p>
+                <label id="license">Прочтите<a href="#" id="lic"> лицензионное соглашение</a></label>
+                <input name="contract" type="checkbox" required>Ok
+            </p>
+
+            <p>
+                <input type="reset" value="Сбросить">
+            </p>
+                <button type="submit">Отправить запрос</button>
             </form>
         </body>
     </html>

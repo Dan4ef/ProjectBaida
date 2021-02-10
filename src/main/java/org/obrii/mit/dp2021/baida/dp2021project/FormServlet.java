@@ -57,9 +57,9 @@ public class FormServlet extends HttpServlet {
             throws ServletException, IOException {
         User user = new User(
                 request.getParameter("name"),
-                request.getParameter("surname"),
-                request.getParameterValues("countries"),
-                request.getParameter("configuration")
+                request.getParameter("phone"),
+                request.getParameter("email"),
+                request.getParameter("date")
         );
         
         request.setAttribute("user", user);

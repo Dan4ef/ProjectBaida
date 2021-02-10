@@ -21,31 +21,41 @@
             <h1><h:outputText value="Hello World!"/></h1>
             <p class="inner__text">
 
-            Dear <span>
-              <%=user.getName()%> <%=user.getSurname()%>
-            </span>. 
-            Your car with <span>
+            <span>
+              <%=user.getName()%>
+            </span>
+            Мы подтвердили вашу почту 
+            <span>
               <%
-                  if (user.getConfiguration() != null) {
-                    out.print(user.getConfiguration());
+                  if (user.getEmail() != null) {
+                    out.print(user.getEmail());
                   } else {
                      out.print("out top config");
                   }
               %>
-            </span> is processing and will have been deliver in one of our spots in 
+            </span> и ваш телефон
             <span>
               <%
-                  if (user.getCountries() != null) {
-                    out.print(user.getCountries());
+                  if (user.getPhone() != null) {
+                    out.print(user.getPhone());
                   } else {
                      out.print("Nowhere)");
                   }
               %>
-            </span>.
+            </span>
+            <span>, а также дату рождения
+              <%
+                  if (user.getPhone() != null) {
+                    out.print(user.getDate());
+                  } else {
+                     out.print("Nowhere)");
+                  }
+              %>
+            </span>. К сожалению,вы не выиграли ни одного приза.
           </p>
 
           <form action="<%=request.getContextPath()%>">
-            <button class="submit" type="submit">go home</button>
+            <button class="submit" type="submit">Вернутся на главную</button>
           </form>
         </body>
     </html>

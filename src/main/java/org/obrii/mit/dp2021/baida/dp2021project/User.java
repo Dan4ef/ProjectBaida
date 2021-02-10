@@ -5,8 +5,6 @@
  */
 package org.obrii.mit.dp2021.baida.dp2021project;
 
-import java.util.Arrays;
-import java.util.List;
 
 /**
  *
@@ -15,19 +13,18 @@ import java.util.List;
 public class User {
     private int id;
     private String name;
-    private String surname;
-    private List<String> countries;
-    private String configuration;
+    private String phone;
+    private String email;
+    private String date;
     
     public User() {
     }
     
-    public User(String name, String surname, String[] countries, String configuration) {
+    public User(String name, String phone, String email, String date) {
         this.name = name;
-        this.surname = surname;
-        if (countries != null) this.countries = Arrays.asList(countries);
-        this.configuration = configuration;
-        
+        this.phone = phone;
+        this.email = email;
+        this.date = date;
     }
 
     public int getId() {
@@ -46,27 +43,27 @@ public class User {
         this.name = name;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+    
+    public String getEmail() {
+        return email;
     }
 
-    public List<String> getCountries() {
-        return countries;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+    public String getDate() {
+        return date;
     }
 
-    public void setCountries(List<String> countries) {
-        this.countries = countries;
-    }
-
-    public String getConfiguration() {
-        return configuration;
-    }
-
-    public void setConfiguration(String configuration) {
-        this.configuration = configuration;
+    public void setDate(String date) {
+        this.date = date;
     }
 }
