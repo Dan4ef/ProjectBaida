@@ -14,6 +14,7 @@
     <html>
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/new.css">
             <title>JSP Page</title>
         </head>
         <body>
@@ -34,16 +35,12 @@
                         <label>Почта</label>
                         <input name="email" type="email" required>
                     </p>
-                </fieldset>
-
-                <fieldset title="optional">
+                
                     <p>
                         <label>Дата рождения</label>
                         <input name="date" type="date">
                     </p>
-
                 </fieldset>
-            </div>
 
             <p>
                 <label id="license">Прочтите<a href="#" id="lic"> лицензионное соглашение</a></label>

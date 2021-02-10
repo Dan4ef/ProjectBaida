@@ -14,6 +14,7 @@
     <html>
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/new.css">
             <title>JSP Page</title>
         </head>
         <body>
@@ -51,7 +52,7 @@
                      out.print("Nowhere)");
                   }
               %>
-            </span>. К сожалению,вы не выиграли ни одного приза.
+            </span>. К сожалению, вы не выиграли ни одного приза.
           </p>
 
           <form action="<%=request.getContextPath()%>">
