@@ -123,11 +123,11 @@
         <div class="footer__item contact">
             <h3>Contact Us</h3>
             <div class="cards">
-                <a href="#" class="brands"><span class="label"><img src="img/inst.png" alt="nan"/></span></a>
-                <a href="#" class="brands "><span class="label"><img src="img/face.png" alt="nan" /></span></a>
-                <a href="#" class="brands"><span class="label"><img src="img/twit.png" alt="nan"/></span></a>
-                <a href="#" class="brands"><span class="label"><img src="img/drib.png" alt="nan"/></span></a>
-                <a href="#" class="brands"><span class="label"><img src="img/pint.png" alt="nan"/></span></a>
+                <a href="#" class="brands"><span class="label"><img src="assets/img/inst.png" alt="nan"/></span></a>
+                <a href="#" class="brands "><span class="label"><img src="assets/img/face.png" alt="nan" /></span></a>
+                <a href="#" class="brands"><span class="label"><img src="assets/img/twit.png" alt="nan"/></span></a>
+                <a href="#" class="brands"><span class="label"><img src="assets/img/drib.png" alt="nan"/></span></a>
+                <a href="#" class="brands"><span class="label"><img src="assets/img/pint.png" alt="nan"/></span></a>
             </div>
             <p>
                 1234 Fictional Road<br /> Nashville, TN 00000<br /> (800) 555-0000
