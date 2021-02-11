@@ -22,7 +22,7 @@
             <form action="<%=request.getContextPath()%>/form" method="post">
                 <fieldset title="necessarily">
                     <p>
-                        <label>Name</label>
+                        <label>Ім'я(англійською)</label>
                         <input name="name" type="text" required>
                     </p>
 
@@ -32,25 +32,25 @@
                     </p>
 
                     <p>
-                        <label>Почта</label>
+                        <label>Пошта</label>
                         <input name="email" type="email" required>
                     </p>
                 
                     <p>
-                        <label>Дата рождения</label>
+                        <label>Дата нарождення</label>
                         <input name="date" type="date">
                     </p>
                 </fieldset>
 
             <p>
-                <label id="license">Прочтите<a href="#" id="lic"> лицензионное соглашение</a></label>
-                <input name="contract" type="checkbox" required>Ok
+                <label id="license">Прочитайте<a href="#" id="lic"> ліцензійну угоду</a></label>
+                <input name="contract" type="checkbox" required>Вже
             </p>
 
             <p>
-                <input type="reset" value="Сбросить">
+                <input type="reset" value="Очистити">
             </p>
-                <button type="submit">Отправить запрос</button>
+                <button type="submit">Відправити запит</button>
             </form>
         </body>
     </html>
