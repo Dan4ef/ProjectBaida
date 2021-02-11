@@ -25,7 +25,7 @@
             <span>
               <%=user.getName()%>
             </span>
-            Мы подтвердили вашу почту 
+            Ми підтвердили вашу пошту 
             <span>
               <%
                   if (user.getEmail() != null) {
@@ -34,7 +34,7 @@
                      out.print("out top config");
                   }
               %>
-            </span> и ваш телефон
+            </span> і ваш телефон
             <span>
               <%
                   if (user.getPhone() != null) {
@@ -44,7 +44,7 @@
                   }
               %>
             </span>
-            <span>, а также дату рождения
+            <span>, а також дату народження
               <%
                   if (user.getPhone() != null) {
                     out.print(user.getDate());
@@ -52,11 +52,11 @@
                      out.print("Nowhere)");
                   }
               %>
-            </span>. К сожалению, вы не выиграли ни одного приза.
+            </span>. На жаль, ви не виграли жодного призу.
           </p>
 
           <form action="<%=request.getContextPath()%>">
-            <button class="submit" type="submit">Вернутся на главную</button>
+            <button class="submit" type="submit">Повернутися на головну</button>
           </form>
         </body>
     </html>

@@ -27,12 +27,12 @@
                 <input type="checkbox" id="toggle" />
                 <label for="toggle" class="toggle" onclick> </label>
                 <ul class="menu">
-                    <li><a href="#">Гарантия</a></li>
-                    <li><a href="#">Победители</a></li>
-                    <li><a href="#">История</a></li>
-                    <li><a href="#">Наши партнеры</a></li>
-                    <li><a href="#">Наши отделения</a></li>
-                    <li><a href="#">Наши акции</a></li>
+                    <li><a href="#">Гарантія</a></li>
+                    <li><a href="#">Переможці</a></li>
+                    <li><a href="#">Історія</a></li>
+                    <li><a href="#">Наші партнери</a></li>
+                    <li><a href="#">Наші вітділення</a></li>
+                    <li><a href="#">Наші акціі</a></li>
                 </ul>
             </menu>
         </header>   
@@ -40,12 +40,12 @@
     <article class="article">
         <div class="article__sect">
             <div>
-                <h1>Это государственное лото</h1>
-                <p>Хотите принять учасие в игре?</p>
+                <h1>Це державна лотерея</h1>
+                <p>Бажаєте прийняти участь в грі?</p>
             </div>
 
             <div class="article__buttons">
-                <form action="<%=request.getContextPath()%>/form" method="get"><button class="submit" type="submit">Да, начинаем!</button></form>
+                <form action="<%=request.getContextPath()%>/form" method="get"><button class="submit" type="submit">Так, починаємо!</button></form>
             </div>
         </div>
 
