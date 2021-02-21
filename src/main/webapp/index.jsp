@@ -20,7 +20,7 @@
         <body>
         <header class="header">
             <div class="verti">
-                <h1><a href="index.html">Лото навар</a></h1>
+                <h1><a href="https://gitmind.com/app/flowchart/4271679164">Лото навар</a></h1>
             </div>
 
             <menu id="menu">
