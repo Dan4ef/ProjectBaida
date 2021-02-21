@@ -108,11 +108,4 @@ public class User implements Interface {
     public String getIsCoolguy() {
         return isCoolguy ? "You`ll receive news about updates":"You will not receive news about updates";
     }
-
-    
-    @Override
-    public String toString() {
-        return "User{" + "name=" + name + ", phone=" + phone + ", email=" + email + ", gender=" + gender + ", language=" + language + ", country=" + country + '}';
-    }
-
 }
