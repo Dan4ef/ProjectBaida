@@ -45,7 +45,7 @@
             </div>
 
             <div class="article__buttons">
-                <form action="<%=request.getContextPath()%>/form" method="get"><button class="submit" type="submit">Так, починаємо!</button></form>
+                <form action="<%=request.getContextPath()%>/pages/form.jsp" method="get"><button class="submit" type="submit">Так, починаємо!</button></form>
             </div>
         </div>
 

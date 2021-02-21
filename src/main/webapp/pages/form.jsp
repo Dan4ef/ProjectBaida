@@ -18,39 +18,41 @@
             <title>JSP Page</title>
         </head>
         <body>
-            <h1><h:outputText value="Hello World!"/></h1>
             <form action="<%=request.getContextPath()%>/form" method="post">
-                <fieldset title="necessarily">
-                    <p>
-                        <label>Ім'я(англійською)</label>
-                        <input name="name" type="text" required>
-                    </p>
+                Your name <br>
+                <input type="text" name="name" placeholder="Your name"><br/><br>
+                 
+                Number:<br>
+                <input name="phone" type="tel" pattern="+380\d\d\d\d\d\d\d\d\d" placeholder="+380123456789" minlength="13" maxlength="13" required><br/><br>
 
-                    <p>
-                        <label>Телефон</label>
-                        <input name="phone" type="tel" pattern="+380\d\d\d\d\d\d\d\d\d" placeholder="+380123456789" minlength="13" maxlength="13" required>
-                    </p>
+                Email: <br>
+                <input name="email" type="email" required><br/><br>
 
-                    <p>
-                        <label>Пошта</label>
-                        <input name="email" type="email" required>
-                    </p>
+                Gender: 
+                <input type="radio" name="gender" value="male">Male    
+                <input type="radio" name="gender" value="female">Female<br/><br>
                 
-                    <p>
-                        <label>Дата нарождення</label>
-                        <input name="date" type="date">
-                    </p>
-                </fieldset>
-
-            <p>
-                <label id="license">Прочитайте<a href="#" id="lic"> ліцензійну угоду</a></label>
-                <input name="contract" type="checkbox" required>Вже
-            </p>
-
-            <p>
-                <input type="reset" value="Очистити">
-            </p>
-                <button type="submit">Відправити запит</button>
+                <div>
+                    Your languages: 
+                    <div class="checkb">
+                        <input type="checkbox" name="language" value="Ukrainian">Ukrainian
+                        <input type="checkbox" name="language" value="Russian">Russian
+                        <input type="checkbox" name="language" value="English">English
+                        <input type="checkbox" name="language" value="German">German <br/><br>
+                    </div>
+                </div>
+                <div>
+                    Country: 
+                    <select name="country">
+                        <option value="Ukraine">Ukraine</option>
+                        <option value="Russia">Russia</option>
+                        <option value="United Kingdoms">United Kingdoms</option>
+                        <option value="Germany">Germany</option>
+                    </select><br/><br>
+                </div>
+                Receive news of updates?
+                <input type="checkbox" name="isCoolguy" value="on"><br>
+                <br><button class="button" type="submit">Submit</button></br>
             </form>
         </body>
     </html>
