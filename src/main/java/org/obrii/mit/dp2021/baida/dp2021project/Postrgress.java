@@ -16,10 +16,11 @@ import java.util.logging.Logger;
  * @author danila
  */
 public class Postrgress {
-    int id = 1;
+    
     private Logger logger;
     private Statement statement;
     private Connection conn;
+    int id = 1;
     public Postrgress() {
         try {
             Class.forName("org.postgresql.Driver");
