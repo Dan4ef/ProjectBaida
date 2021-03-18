@@ -16,12 +16,11 @@ import java.util.logging.Logger;
  * @author danila
  */
 public class Postrgress {
-    int id;
+    int id = 1;
     private Logger logger;
     private Statement statement;
     private Connection conn;
     public Postrgress() {
-        id = 1;
         try {
             Class.forName("org.postgresql.Driver");
             this.conn = DriverManager.getConnection("jdbc:postgresql://obrii.org:5432/db2021mit21s2", "s2", "4359");
