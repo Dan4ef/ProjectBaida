@@ -6,7 +6,6 @@ package org.obrii.mit.dp2021.baida.dp2021project;
  * and open the template in the editor.
  */
 
-import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,16 +24,11 @@ import javax.servlet.http.HttpServletResponse;
 public class DataServlet extends HttpServlet {
 
     
-    DataInt dataCrud = new FileInt(new File(FileClass.getFileName()));
+    Postrgress dataCrud = new Postrgress();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-                if (FileClass.getFileName().equals("")) {
-            FileClass.setFileName(this.getServletContext().getRealPath("") + "data.txt");
-            dataCrud = new FileInt(new File(FileClass.getFileName()));
-        }
                 
                 if(request.getParameter("search")!=null){
                 request.setAttribute("data", dataCrud.searchData(request.getParameter("search")));
@@ -85,10 +79,7 @@ public class DataServlet extends HttpServlet {
     protected void doDelete(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
          int myId = Integer.parseInt(request.getParameter("id"));
-       dataCrud.deleteData(myId
-        
-        );
-       dataCrud.stData();
+       dataCrud.deleteData(myId);
        doGet(request, response);
        
     }
