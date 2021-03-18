@@ -33,7 +33,7 @@ public class Postrgress {
             System.err.println(e.getClass().getName()+": "+e.getMessage());
             System.exit(0);
         }
-        Data("CREATE TABLE IF NOT EXISTS customers ("
+        sql("CREATE TABLE IF NOT EXISTS customers ("
                         + "id integer primary key not null, "
                         + "name text not null, "
                         + "age integer not null "
@@ -41,9 +41,9 @@ public class Postrgress {
   
     }
    
-    public void Data(String data){
+    public void sql(String stok){
         try{
-            statement.executeUpdate(data);
+            statement.executeUpdate(stok);
             conn.commit();
         }
         catch(SQLException e){
@@ -80,16 +80,16 @@ public class Postrgress {
         }
         data.setId(this.id);
         id=id+1;
-        Data(String.format("INSERT INTO customers (id, name, age) VALUES (%d, '%s', %d);",
+        sql(String.format("INSERT INTO customers (id, name, age) VALUES (%d, '%s', %d);",
                 data.getId(), data.getName(), data.getAge()));
     }
 
     public void deleteData(int id) {        
-        Data("DELETE FROM customers WHERE id=" + id);
+        sql("DELETE FROM customers WHERE id=" + id);
     }
     
     public void updateData(int id, Data data) {  
-        Data(String.format("UPDATE customers "
+        sql(String.format("UPDATE customers "
                         + "SET name='" + data.getName() + "' , "
                         + "age=" + data.getAge()
                 + "WHERE id="+id)
