@@ -8,6 +8,10 @@ package org.obrii.mit.dp2021.baida.dp2021project;
 
 
 import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 
 
@@ -15,7 +19,10 @@ import java.io.Serializable;
  *
  * @author danila
  */
+@Entity
 public class  Data implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private int age;

@@ -7,11 +7,14 @@ package org.obrii.mit.dp2021.baida.dp2021project;
  */
 
 import java.io.IOException;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 
 
@@ -23,69 +26,55 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "DataServlet", urlPatterns = {"/Data"})
 public class DataServlet extends HttpServlet {
 
-    
-    Postrgress dataCrud = new Postrgress();
+    @Autowired
+    Spring Spring;
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-                
-                if(request.getParameter("search")!=null){
-                request.setAttribute("data", dataCrud.searchData(request.getParameter("search")));
-                }
-                else{
-                request.setAttribute("data", dataCrud.readData());
-                }
-                request.getRequestDispatcher("home.jsp").forward(request, response); 
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
+        SpringBeanAutowiringSupport.processInjectionBasedOnServletContext(this, config.getServletContext());
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-      
-        dataCrud.createData(
-        new Data(
-        Integer.parseInt(request.getParameter("id")),
-        request.getParameter("name"),
-        Integer.parseInt(request.getParameter("age"))
-        
-        )
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if (request.getParameter("search") != null) {
+            request.setAttribute("data", Spring.sortData(request.getParameter("search")));
+        } else {
+            request.setAttribute("data", Spring.readData());
+        }
+        request.getRequestDispatcher("home.jsp").forward(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Data user = new Data(
+                Integer.parseInt(request.getParameter("id")),
+                request.getParameter("name"),
+                Integer.parseInt(request.getParameter("age"))
         );
-        
-        
-        
-        
-        
-        
+        Spring.createData(user);
         doGet(request, response);
     }
 
     @Override
-    protected void doPut(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-       int myId = Integer.parseInt(request.getParameter("id"));
-       dataCrud.updateData(myId,
-        new Data(
-        Integer.parseInt(request.getParameter("id")),
-        request.getParameter("name"),
-        Integer.parseInt(request.getParameter("age"))
-        
-        )
+    protected void doPut(HttpServletRequest request, HttpServletResponse responce) throws ServletException, IOException {
+        Data user = new Data(
+                Integer.parseInt(request.getParameter("id")),
+                request.getParameter("name"),
+                Integer.parseInt(request.getParameter("age"))
         );
-       doGet(request, response);
+        Spring.updateData(user, Integer.parseInt(request.getParameter("id")));
+        doGet(request, responce);
     }
-    
+
     @Override
-    protected void doDelete(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-         int myId = Integer.parseInt(request.getParameter("id"));
-       dataCrud.deleteData(myId);
-       doGet(request, response);
-       
+    protected void doDelete(HttpServletRequest request, HttpServletResponse responce) throws ServletException, IOException {
+        Spring.deleteData(Integer.parseInt(request.getParameter("id")));
+        doGet(request, responce);
     }
+
     @Override
     public String getServletInfo() {
         return "Short description";
     }
-
 }

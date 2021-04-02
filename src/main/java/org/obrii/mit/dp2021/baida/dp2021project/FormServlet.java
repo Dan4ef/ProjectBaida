@@ -9,6 +9,7 @@ package org.obrii.mit.dp2021.baida.dp2021project;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.ServletConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,25 +19,27 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author danila
  */
-@WebServlet(name = "FormServlet", urlPatterns = {"/forma"})
+@WebServlet(name = "FormUPD", urlPatterns = {"/forma"})
 public class FormServlet extends HttpServlet {
-    
-    DataServlet dataServlet = new DataServlet();
-    
+
+    DataServlet DBServlet = new DataServlet();
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
+        DBServlet = new DataServlet();
+        DBServlet.init(config);
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      dataServlet.doDelete(request,response);
+        DBServlet.doDelete(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        dataServlet.doPut(request,response);
-    }
-
-    @Override
-    public String getServletInfo() {
-        return "Short description";
+        DBServlet.doPut(request, response);
     }
 }
